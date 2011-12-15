@@ -10,6 +10,18 @@
 
 @implementation ViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        CFURLRef pdfURL = CFBundleCopyResourceURL(CFBundleGetMainBundle(), CFSTR("data.pdf"), NULL, NULL);
+        pdf = CGPDFDocumentCreateWithURL((CFURLRef)pdfURL);
+        CFRelease(pdfURL);
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.opaque = YES;
+        
+    }
+    return self;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -22,6 +34,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UIScrollView *pdfScrollView = [[UIScrollView alloc] init];
+    pdfScrollView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    pdfScrollView.backgroundColor = [UIColor grayColor];
+    pdfScrollView.pagingEnabled = YES;
+    
+    documentPages = (int)CGPDFDocumentGetNumberOfPages(pdf);
+    NSLog(@"document count %d",documentPages);
+    
+    for (int i=1; i<=documentPages; i++) {
+        pageView = [[PDFPageView alloc] initWithDocumentPage:CGPDFDocumentGetPage(pdf, i) andFrame:CGRectMake((i-1)*self.view.frame.size.width, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height)];
+        [pdfScrollView addSubview:pageView];
+    }
+    pdfScrollView.contentSize = CGSizeMake(documentPages*self.view.frame.size.width, 0);
+
+    pdfScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    //pdfScrollView.contentMode = UIViewContentModeCenter;
+    [self.view addSubview:pdfScrollView];
 }
 
 - (void)viewDidUnload

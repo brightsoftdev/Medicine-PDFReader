@@ -18,6 +18,7 @@
 		9900CBD91499EC5E003B8D76 /* PDFPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CBD81499EC5E003B8D76 /* PDFPageView.m */; };
 		9900CBDD1499EC88003B8D76 /* PDFSearchClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CBDC1499EC88003B8D76 /* PDFSearchClass.m */; };
 		9900CBE11499ECDD003B8D76 /* data.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9900CBE01499ECDD003B8D76 /* data.pdf */; };
+		9A049DFF1499F7510031BA05 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A049DFE1499F7510031BA05 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		9900CBDB1499EC88003B8D76 /* PDFSearchClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDFSearchClass.h; path = "PDF Search Class/PDFSearchClass.h"; sourceTree = "<group>"; };
 		9900CBDC1499EC88003B8D76 /* PDFSearchClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDFSearchClass.m; path = "PDF Search Class/PDFSearchClass.m"; sourceTree = "<group>"; };
 		9900CBE01499ECDD003B8D76 /* data.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = data.pdf; sourceTree = "<group>"; };
+		9A049DFE1499F7510031BA05 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A049DFF1499F7510031BA05 /* QuartzCore.framework in Frameworks */,
 				9900CBBA1499EA26003B8D76 /* UIKit.framework in Frameworks */,
 				9900CBBC1499EA26003B8D76 /* Foundation.framework in Frameworks */,
 				9900CBBE1499EA26003B8D76 /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +61,7 @@
 		9900CBAA1499EA26003B8D76 = {
 			isa = PBXGroup;
 			children = (
+				9A049DFE1499F7510031BA05 /* QuartzCore.framework */,
 				9900CBBF1499EA26003B8D76 /* MedicalPDFReader */,
 				9900CBB81499EA26003B8D76 /* Frameworks */,
 				9900CBB61499EA26003B8D76 /* Products */,
@@ -325,6 +329,7 @@
 				9900CBD51499EA26003B8D76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

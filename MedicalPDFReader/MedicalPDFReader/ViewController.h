@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "PDFPageView.h"
 
 @interface ViewController : UIViewController
+{
+    CGPDFDocumentRef pdf;
+    PDFPageView *pageView;
+    NSUInteger documentPages;
+}
 
 @end

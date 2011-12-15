@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface PDFPageView : UIView
+{
+    CGPDFPageRef pdfPage;
+}
 
+-(id)initWithDocumentPage:(CGPDFPageRef)page andFrame:(CGRect)frame;
 @end
