@@ -1,0 +1,25 @@
+MedicalPDFReader*/.DS_Store
+MedicalPDFReader/build
+MedicalPDFReader/MedicalPDFReader.xcodeproj/*.pbxuser
+MedicalPDFReader/MedicalPDFReader.xcodeproj/*.mode1v3
+MedicalPDFReader/Products
+MedicalPDFReader/*.pbxuser
+MedicalPDFReader/*.perspectivev3
+MedicalPDFReader/*.mode1v3
+MedicalPDFReader/.pbxuser
+MedicalPDFReader/.perspectivev3
+MedicalPDFReader/.mode1v3
+MedicalPDFReader/MedicalPDFReader.xcodeproj/xcuserdata/*
+MedicalPDFReader/MedicalPDFReader.xcodeproj/*.xcworkspace
+# xcode noise
+build/*
+*.pbxuser
+*.mode1v3
+
+# old skool
+.svn
+
+# osx noise
+.DS_Store
+profile
+
