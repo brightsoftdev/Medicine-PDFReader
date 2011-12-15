@@ -15,6 +15,9 @@
 		9900CBCA1499EA26003B8D76 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CBC91499EA26003B8D76 /* AppDelegate.m */; };
 		9900CBCD1499EA26003B8D76 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CBCC1499EA26003B8D76 /* ViewController.m */; };
 		9900CBD01499EA26003B8D76 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9900CBCE1499EA26003B8D76 /* ViewController.xib */; };
+		9900CBD91499EC5E003B8D76 /* PDFPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CBD81499EC5E003B8D76 /* PDFPageView.m */; };
+		9900CBDD1499EC88003B8D76 /* PDFSearchClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CBDC1499EC88003B8D76 /* PDFSearchClass.m */; };
+		9900CBE11499ECDD003B8D76 /* data.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9900CBE01499ECDD003B8D76 /* data.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,11 @@
 		9900CBCB1499EA26003B8D76 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9900CBCC1499EA26003B8D76 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9900CBCF1499EA26003B8D76 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		9900CBD71499EC5E003B8D76 /* PDFPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDFPageView.h; path = PDFPageView/PDFPageView.h; sourceTree = "<group>"; };
+		9900CBD81499EC5E003B8D76 /* PDFPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDFPageView.m; path = PDFPageView/PDFPageView.m; sourceTree = "<group>"; };
+		9900CBDB1499EC88003B8D76 /* PDFSearchClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDFSearchClass.h; path = "PDF Search Class/PDFSearchClass.h"; sourceTree = "<group>"; };
+		9900CBDC1499EC88003B8D76 /* PDFSearchClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDFSearchClass.m; path = "PDF Search Class/PDFSearchClass.m"; sourceTree = "<group>"; };
+		9900CBE01499ECDD003B8D76 /* data.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = data.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,8 @@
 		9900CBBF1499EA26003B8D76 /* MedicalPDFReader */ = {
 			isa = PBXGroup;
 			children = (
+				9900CBDA1499EC6B003B8D76 /* PDF Search */,
+				9900CBD61499EC3F003B8D76 /* PDF Page View */,
 				9900CBC81499EA26003B8D76 /* AppDelegate.h */,
 				9900CBC91499EA26003B8D76 /* AppDelegate.m */,
 				9900CBCB1499EA26003B8D76 /* ViewController.h */,
@@ -90,12 +100,48 @@
 		9900CBC01499EA26003B8D76 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9900CBDE1499EC8D003B8D76 /* Resources */,
 				9900CBC11499EA26003B8D76 /* MedicalPDFReader-Info.plist */,
 				9900CBC21499EA26003B8D76 /* InfoPlist.strings */,
 				9900CBC51499EA26003B8D76 /* main.m */,
 				9900CBC71499EA26003B8D76 /* MedicalPDFReader-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9900CBD61499EC3F003B8D76 /* PDF Page View */ = {
+			isa = PBXGroup;
+			children = (
+				9900CBD71499EC5E003B8D76 /* PDFPageView.h */,
+				9900CBD81499EC5E003B8D76 /* PDFPageView.m */,
+			);
+			name = "PDF Page View";
+			sourceTree = "<group>";
+		};
+		9900CBDA1499EC6B003B8D76 /* PDF Search */ = {
+			isa = PBXGroup;
+			children = (
+				9900CBDB1499EC88003B8D76 /* PDFSearchClass.h */,
+				9900CBDC1499EC88003B8D76 /* PDFSearchClass.m */,
+			);
+			name = "PDF Search";
+			sourceTree = "<group>";
+		};
+		9900CBDE1499EC8D003B8D76 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9900CBDF1499ECDD003B8D76 /* pdf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9900CBDF1499ECDD003B8D76 /* pdf */ = {
+			isa = PBXGroup;
+			children = (
+				9900CBE01499ECDD003B8D76 /* data.pdf */,
+			);
+			name = pdf;
+			path = Resources/pdf;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +196,7 @@
 			files = (
 				9900CBC41499EA26003B8D76 /* InfoPlist.strings in Resources */,
 				9900CBD01499EA26003B8D76 /* ViewController.xib in Resources */,
+				9900CBE11499ECDD003B8D76 /* data.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +210,8 @@
 				9900CBC61499EA26003B8D76 /* main.m in Sources */,
 				9900CBCA1499EA26003B8D76 /* AppDelegate.m in Sources */,
 				9900CBCD1499EA26003B8D76 /* ViewController.m in Sources */,
+				9900CBD91499EC5E003B8D76 /* PDFPageView.m in Sources */,
+				9900CBDD1499EC88003B8D76 /* PDFSearchClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
