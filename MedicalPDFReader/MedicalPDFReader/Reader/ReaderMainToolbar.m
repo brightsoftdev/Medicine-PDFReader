@@ -115,7 +115,18 @@
 		markImageY = [[UIImage imageNamed:@"Reader-Mark-Y.png"] retain]; // Y image
 
 #endif // end of READER_BOOKMARKS Option
-
+        rightButtonX -= (EMAIL_BUTTON_WIDTH + BUTTON_SPACE);
+        
+        UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        searchButton.frame = CGRectMake(rightButtonX, BUTTON_Y, EMAIL_BUTTON_WIDTH, BUTTON_HEIGHT);
+        [searchButton setImage:[UIImage imageNamed:@"search_phone.png"] forState:UIControlStateNormal];
+        [searchButton addTarget:self action:@selector(searchButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [searchButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+        [searchButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+        searchButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        
+        [self addSubview:searchButton]; titleWidth -= (EMAIL_BUTTON_WIDTH + BUTTON_SPACE);
 	}
 
 	return self;
@@ -244,6 +255,15 @@
 #endif
 
 	[delegate tappedInToolbar:self markButton:button];
+}
+
+- (void)searchButtonTapped:(UIButton *)button
+{
+#ifdef DEBUGX
+	NSLog(@"%s", __FUNCTION__);
+#endif
+    
+	[delegate tappedInToolbar:self searchButton:button];
 }
 
 @end

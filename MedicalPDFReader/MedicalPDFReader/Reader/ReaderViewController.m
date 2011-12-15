@@ -793,6 +793,11 @@
 #endif // end of READER_STANDALONE Option
 }
 
+-(void)tappedInToolbar:(ReaderMainToolbar *)toolbar searchButton:(UIButton *)button
+{
+    NSLog(@"Search Pressed");
+}
+
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar markButton:(UIButton *)button
 {
 #ifdef DEBUGX
