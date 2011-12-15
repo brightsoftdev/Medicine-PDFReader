@@ -30,8 +30,11 @@
 #define DONE_BUTTON_WIDTH 56.0f
 #define THUMBS_BUTTON_WIDTH 40.0f
 #define PRINT_BUTTON_WIDTH 40.0f
-#define EMAIL_BUTTON_WIDTH 40.0f
+#define SEARCH_BUTTON_WIDTH 40.0f
 #define MARK_BUTTON_WIDTH 40.0f
+
+#define SEARCH_TEXTFIELD_WIDTH 250.0f
+#define SEARCH_TEXTFIELD_HEIGHT 25.0f
 
 #define TITLE_HEIGHT 28.0f
 
@@ -115,18 +118,30 @@
 		markImageY = [[UIImage imageNamed:@"Reader-Mark-Y.png"] retain]; // Y image
 
 #endif // end of READER_BOOKMARKS Option
-        rightButtonX -= (EMAIL_BUTTON_WIDTH + BUTTON_SPACE);
+//        rightButtonX -= (SEARCH_BUTTON_WIDTH + BUTTON_SPACE);
+//        
+//        UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        
+//        searchButton.frame = CGRectMake(rightButtonX, BUTTON_Y, SEARCH_BUTTON_WIDTH, BUTTON_HEIGHT);
+//        [searchButton setImage:[UIImage imageNamed:@"search_phone.png"] forState:UIControlStateNormal];
+//        [searchButton addTarget:self action:@selector(searchButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+//        [searchButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+//        [searchButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+//        searchButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+//        
+//        [self addSubview:searchButton]; titleWidth -= (SEARCH_BUTTON_WIDTH + BUTTON_SPACE);
         
-        UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        rightButtonX -= (SEARCH_TEXTFIELD_WIDTH + BUTTON_SPACE);
         
-        searchButton.frame = CGRectMake(rightButtonX, BUTTON_Y, EMAIL_BUTTON_WIDTH, BUTTON_HEIGHT);
-        [searchButton setImage:[UIImage imageNamed:@"search_phone.png"] forState:UIControlStateNormal];
-        [searchButton addTarget:self action:@selector(searchButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-        [searchButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
-        [searchButton setBackgroundImage:buttonN forState:UIControlStateNormal];
-        searchButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        UISearchBar * searchBar = [[UISearchBar alloc] init];
         
-        [self addSubview:searchButton]; titleWidth -= (EMAIL_BUTTON_WIDTH + BUTTON_SPACE);
+        searchBar.frame = CGRectMake(rightButtonX,BUTTON_Y + 3, SEARCH_TEXTFIELD_WIDTH,SEARCH_TEXTFIELD_HEIGHT - 2);
+        searchBar.delegate = self;
+        [searchBar setTintColor:[UIColor clearColor]];
+        searchBar.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        searchBar.backgroundColor = [UIColor clearColor];
+        [[searchBar.subviews objectAtIndex:0] removeFromSuperview];
+        [self addSubview:searchBar]; titleWidth -= (SEARCH_TEXTFIELD_WIDTH + BUTTON_SPACE);
 	}
 
 	return self;
@@ -264,6 +279,12 @@
 #endif
     
 	[delegate tappedInToolbar:self searchButton:button];
+}
+
+#pragma mark SearchBar Delegate
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"Search Clicked");
 }
 
 @end

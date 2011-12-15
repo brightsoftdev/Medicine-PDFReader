@@ -29,7 +29,7 @@
 
 @end
 
-@interface ReaderMainToolbar : UIXToolbarView
+@interface ReaderMainToolbar : UIXToolbarView <UISearchBarDelegate>
 {
 @private // Instance variables
 
