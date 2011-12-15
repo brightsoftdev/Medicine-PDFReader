@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+//#import "ViewController.h"
+#import "ReaderViewController.h"
 
 @implementation AppDelegate
 
@@ -19,8 +20,31 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    
+    NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+    
+	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
+    
+	NSString *documentName = [[pdfs lastObject] lastPathComponent]; assert(documentName != nil);
+    
+	ReaderDocument *document = [ReaderDocument unarchiveFromFileName:documentName password:phrase];
+    
+	if (document == nil) // We need to create a brand new ReaderDocument object the first time we run
+	{
+		NSString *filePath = [[NSBundle mainBundle] pathForResource:documentName ofType:nil]; // Path
+        
+		document = [[ReaderDocument alloc] initWithFilePath:filePath password:phrase];
+	}
+    
+	if (document != nil) // Must have a valid ReaderDocument object in order to proceed
+	{
+		ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+        self.window.rootViewController = readerViewController;
+		//readerViewController.delegate = self; // Set the ReaderViewController delegate to self
+	}
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -63,5 +87,6 @@
      See also applicationDidEnterBackground:.
      */
 }
+
 
 @end
