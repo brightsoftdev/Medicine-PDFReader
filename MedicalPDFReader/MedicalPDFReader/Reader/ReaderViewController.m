@@ -787,6 +787,7 @@
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar backButton:(UIButton *)button
 {
     if(_readerView != nil)
+        [document saveReaderDocument];
         [_readerView dismissModalViewControllerAnimated:YES];
     return;
     
