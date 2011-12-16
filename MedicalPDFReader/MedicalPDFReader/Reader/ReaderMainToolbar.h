@@ -23,7 +23,7 @@
 
 @required // Delegate protocols
 
-- (void)tappedInToolbar:(ReaderMainToolbar *)toolbar doneButton:(UIButton *)button;
+- (void)tappedInToolbar:(ReaderMainToolbar *)toolbar backButton:(UIButton *)button;
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar markButton:(UIButton *)button;
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar searchButton:(UIButton *)button;
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar switchPDFButton:(UIButton *)button;
@@ -38,6 +38,7 @@
 
 	UIImage *markImageN;
 	UIImage *markImageY;
+    UIButton *backButton;
 }
 
 @property (nonatomic, assign, readwrite) id <ReaderMainToolbarDelegate> delegate;

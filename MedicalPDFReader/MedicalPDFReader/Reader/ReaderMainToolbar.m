@@ -15,8 +15,7 @@
 #import "ReaderConstants.h"
 #import "ReaderMainToolbar.h"
 #import "ReaderDocument.h"
-
-#import <MessageUI/MessageUI.h>
+#import "ReaderViewController.h"
 
 @implementation ReaderMainToolbar
 
@@ -60,8 +59,7 @@
 #endif
 
 	assert(object != nil); // Check
-
-	if ((self = [super initWithFrame:frame]))
+    if ((self = [super initWithFrame:frame]))
 	{
 		CGFloat viewWidth = self.bounds.size.width;
 
@@ -76,22 +74,24 @@
 		CGFloat leftButtonX = BUTTON_X; // Left button start X position
 
 #if (READER_STANDALONE == FALSE) // Option
-
-		UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeCustom];
-
-		doneButton.frame = CGRectMake(leftButtonX, BUTTON_Y, DONE_BUTTON_WIDTH, BUTTON_HEIGHT);
-		[doneButton setTitle:NSLocalizedString(@"Done", @"button") forState:UIControlStateNormal];
-		[doneButton setTitleColor:[UIColor colorWithWhite:0.0f alpha:1.0f] forState:UIControlStateNormal];
-		[doneButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:1.0f] forState:UIControlStateHighlighted];
-		[doneButton addTarget:self action:@selector(doneButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-		[doneButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
-		[doneButton setBackgroundImage:buttonN forState:UIControlStateNormal];
-		doneButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
-		doneButton.autoresizingMask = UIViewAutoresizingNone;
-
-		[self addSubview:doneButton]; leftButtonX += (DONE_BUTTON_WIDTH + BUTTON_SPACE);
-
-		titleX += (DONE_BUTTON_WIDTH + BUTTON_SPACE); titleWidth -= (DONE_BUTTON_WIDTH + BUTTON_SPACE);
+        
+            backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+            
+            backButton.frame = CGRectMake(leftButtonX, BUTTON_Y, DONE_BUTTON_WIDTH, BUTTON_HEIGHT);
+            [backButton setTitle:NSLocalizedString(@"Back", @"button") forState:UIControlStateNormal];
+            [backButton setTitleColor:[UIColor colorWithWhite:0.0f alpha:1.0f] forState:UIControlStateNormal];
+            [backButton setTitleColor:[UIColor colorWithWhite:1.0f alpha:1.0f] forState:UIControlStateHighlighted];
+            [backButton addTarget:self action:@selector(backButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+            [backButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+            [backButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+            backButton.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+            backButton.autoresizingMask = UIViewAutoresizingNone;
+            
+            [self addSubview:backButton]; leftButtonX += (DONE_BUTTON_WIDTH + BUTTON_SPACE);
+            
+            titleX += (DONE_BUTTON_WIDTH + BUTTON_SPACE); titleWidth -= (DONE_BUTTON_WIDTH + BUTTON_SPACE);
+        
+		
 
 #endif // end of READER_STANDALONE Option
 
@@ -160,6 +160,15 @@
 	return self;
 }
 
+-(void)setDelegate:(id<ReaderMainToolbarDelegate>)_delegate
+{
+    delegate = _delegate;
+    if(((ReaderViewController *)_delegate).readerView == nil)
+    {
+        backButton.enabled = NO;
+        backButton.hidden = YES;
+    }
+}
 - (void)dealloc
 {
 #ifdef DEBUGX
@@ -267,13 +276,13 @@
 
 #pragma mark UIButton action methods
 
-- (void)doneButtonTapped:(UIButton *)button
+- (void)backButtonTapped:(UIButton *)button
 {
 #ifdef DEBUGX
 	NSLog(@"%s", __FUNCTION__);
 #endif
 
-	[delegate tappedInToolbar:self doneButton:button];
+	[delegate tappedInToolbar:self backButton:button];
 }
 
 - (void)markButtonTapped:(UIButton *)button

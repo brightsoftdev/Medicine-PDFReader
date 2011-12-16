@@ -333,7 +333,7 @@
     
 	mainToolbar = [[ReaderMainToolbar alloc] initWithFrame:toolbarRect document:document]; // At top
     
-	mainToolbar.delegate = self;
+	[mainToolbar setDelegate:self];
     
 	[self.view addSubview:mainToolbar];
     
@@ -784,7 +784,7 @@
 
 #pragma mark ReaderMainToolbarDelegate methods
 
-- (void)tappedInToolbar:(ReaderMainToolbar *)toolbar doneButton:(UIButton *)button
+- (void)tappedInToolbar:(ReaderMainToolbar *)toolbar backButton:(UIButton *)button
 {
     if(_readerView != nil)
         [_readerView dismissModalViewControllerAnimated:YES];
