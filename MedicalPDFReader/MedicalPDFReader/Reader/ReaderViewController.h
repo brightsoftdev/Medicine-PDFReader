@@ -51,10 +51,13 @@
 	NSDate *lastHideTime;
     
 	BOOL isVisible;
+    
+    NSString *pdfName;
 }
 
+@property (nonatomic, retain) ReaderViewController * readerView;
 @property (nonatomic, assign, readwrite) id <ReaderViewControllerDelegate> delegate;
 
-- (id)initWithReaderDocument:(ReaderDocument *)object;
-
+- (id)initWithReaderDocument:(ReaderDocument *)object andPDFName:(NSString *)_pdfName;
+-(void)backgroundSearchIndex;
 @end

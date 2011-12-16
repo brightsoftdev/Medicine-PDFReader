@@ -118,30 +118,43 @@
 		markImageY = [[UIImage imageNamed:@"Reader-Mark-Y.png"] retain]; // Y image
 
 #endif // end of READER_BOOKMARKS Option
-//        rightButtonX -= (SEARCH_BUTTON_WIDTH + BUTTON_SPACE);
-//        
-//        UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//        
-//        searchButton.frame = CGRectMake(rightButtonX, BUTTON_Y, SEARCH_BUTTON_WIDTH, BUTTON_HEIGHT);
-//        [searchButton setImage:[UIImage imageNamed:@"search_phone.png"] forState:UIControlStateNormal];
-//        [searchButton addTarget:self action:@selector(searchButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-//        [searchButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
-//        [searchButton setBackgroundImage:buttonN forState:UIControlStateNormal];
-//        searchButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-//        
-//        [self addSubview:searchButton]; titleWidth -= (SEARCH_BUTTON_WIDTH + BUTTON_SPACE);
+        rightButtonX -= (SEARCH_BUTTON_WIDTH + BUTTON_SPACE);
         
-        rightButtonX -= (SEARCH_TEXTFIELD_WIDTH + BUTTON_SPACE);
+        UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        UISearchBar * searchBar = [[UISearchBar alloc] init];
+        searchButton.frame = CGRectMake(rightButtonX, BUTTON_Y, SEARCH_BUTTON_WIDTH, BUTTON_HEIGHT);
+        [searchButton setImage:[UIImage imageNamed:@"search_phone.png"] forState:UIControlStateNormal];
+        [searchButton addTarget:self action:@selector(searchButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [searchButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+        [searchButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+        searchButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
         
-        searchBar.frame = CGRectMake(rightButtonX,BUTTON_Y + 3, SEARCH_TEXTFIELD_WIDTH,SEARCH_TEXTFIELD_HEIGHT - 2);
-        searchBar.delegate = self;
-        [searchBar setTintColor:[UIColor clearColor]];
-        searchBar.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
-        searchBar.backgroundColor = [UIColor clearColor];
-        [[searchBar.subviews objectAtIndex:0] removeFromSuperview];
-        [self addSubview:searchBar]; titleWidth -= (SEARCH_TEXTFIELD_WIDTH + BUTTON_SPACE);
+        [self addSubview:searchButton]; titleWidth -= (SEARCH_BUTTON_WIDTH + BUTTON_SPACE);
+        
+        rightButtonX -= (SEARCH_BUTTON_WIDTH + BUTTON_SPACE);
+        
+        UIButton *switchPDFButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        switchPDFButton.frame = CGRectMake(rightButtonX, BUTTON_Y, SEARCH_BUTTON_WIDTH, BUTTON_HEIGHT);
+        [switchPDFButton setImage:[UIImage imageNamed:@"search_phone.png"] forState:UIControlStateNormal];
+        [switchPDFButton addTarget:self action:@selector(switchPDFButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [switchPDFButton setBackgroundImage:buttonH forState:UIControlStateHighlighted];
+        [switchPDFButton setBackgroundImage:buttonN forState:UIControlStateNormal];
+        switchPDFButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+        
+        [self addSubview:switchPDFButton]; titleWidth -= (SEARCH_BUTTON_WIDTH + BUTTON_SPACE);
+        
+//        rightButtonX -= (SEARCH_TEXTFIELD_WIDTH + BUTTON_SPACE);
+//        
+//        UISearchBar * searchBar = [[UISearchBar alloc] init];
+//        
+//        searchBar.frame = CGRectMake(rightButtonX,BUTTON_Y + 3, SEARCH_TEXTFIELD_WIDTH,SEARCH_TEXTFIELD_HEIGHT - 2);
+//        searchBar.delegate = self;
+//        [searchBar setTintColor:[UIColor clearColor]];
+//        searchBar.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
+//        searchBar.backgroundColor = [UIColor clearColor];
+//        [[searchBar.subviews objectAtIndex:0] removeFromSuperview];
+//        [self addSubview:searchBar]; titleWidth -= (SEARCH_TEXTFIELD_WIDTH + BUTTON_SPACE);
 	}
 
 	return self;
@@ -281,10 +294,14 @@
 	[delegate tappedInToolbar:self searchButton:button];
 }
 
+-(void)switchPDFButtonTapped:(UIButton *)button
+{
+    [delegate tappedInToolbar:self switchPDFButton:button];
+}
+
 #pragma mark SearchBar Delegate
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     NSLog(@"Search Clicked");
 }
-
 @end

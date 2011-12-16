@@ -26,6 +26,7 @@
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar doneButton:(UIButton *)button;
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar markButton:(UIButton *)button;
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar searchButton:(UIButton *)button;
+- (void)tappedInToolbar:(ReaderMainToolbar *)toolbar switchPDFButton:(UIButton *)button;
 
 @end
 

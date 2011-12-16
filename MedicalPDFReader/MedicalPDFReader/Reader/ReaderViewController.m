@@ -14,9 +14,11 @@
 
 #import "ReaderConstants.h"
 #import "ReaderViewController.h"
+#import "SearchBackground.h"
+#import "PDF_indexerViewController.h"
 
 @implementation ReaderViewController
-
+@synthesize readerView = _readerView;
 #pragma mark Constants
 
 #define PAGING_VIEWS 3
@@ -254,7 +256,7 @@
 
 #pragma mark UIViewController methods
 
-- (id)initWithReaderDocument:(ReaderDocument *)object
+- (id)initWithReaderDocument:(ReaderDocument *)object andPDFName:(NSString *)_pdfName
 {
 #ifdef DEBUGX
 	NSLog(@"%s", __FUNCTION__);
@@ -277,6 +279,8 @@
 			reader = self; // Return an initialized ReaderViewController object
 		}
 	}
+    
+    pdfName = [[NSString alloc] initWithString:[_pdfName stringByDeletingPathExtension]];
     
 	return reader;
 }
@@ -353,6 +357,20 @@
 	[self.view addGestureRecognizer:doubleTapTwo]; [doubleTapTwo release];
     
 	contentViews = [NSMutableDictionary new]; lastHideTime = [NSDate new];
+    
+    [self backgroundSearchIndex];
+}
+
+-(void)backgroundSearchIndex
+{
+    if(![[[NSUserDefaults standardUserDefaults] valueForKey:[NSString stringWithFormat:@"isIndexingDoneFor%@",pdfName]]boolValue])
+    {
+        PDF_indexerViewController *indexer = [[PDF_indexerViewController alloc]init];
+        indexer.nameOfFileString = pdfName;
+        [indexer checkStatus];
+        [indexer release];
+        [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:[NSString stringWithFormat:@"isIndexingDoneFor%@",pdfName]];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -768,6 +786,8 @@
 
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar doneButton:(UIButton *)button
 {
+    if(_readerView != nil)
+        [_readerView dismissModalViewControllerAnimated:YES];
     return;
     
     
@@ -795,7 +815,10 @@
 
 -(void)tappedInToolbar:(ReaderMainToolbar *)toolbar searchButton:(UIButton *)button
 {
-    NSLog(@"Search Pressed");
+    SearchBackground * sfogliaView = [[SearchBackground alloc] init];
+    sfogliaView.fileName = pdfName;
+    sfogliaView.delegate = self;
+    [self.view addSubview:sfogliaView.view];
 }
 
 - (void)tappedInToolbar:(ReaderMainToolbar *)toolbar markButton:(UIButton *)button
@@ -819,6 +842,36 @@
 		[mainToolbar setBookmarkState:YES];
         
 		[document.bookmarks addIndex:page];
+	}
+}
+
+-(void)tappedInToolbar:(ReaderMainToolbar *)toolbar switchPDFButton:(UIButton *)button
+{
+    if(_readerView != nil)
+        return;
+    NSLog(@"Switch PDF");
+    NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+    
+	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
+    
+	NSString *documentName = [[pdfs objectAtIndex:0] lastPathComponent]; assert(documentName != nil);
+    NSLog(@"documentName %@",documentName);
+	ReaderDocument *_document = [ReaderDocument unarchiveFromFileName:documentName password:phrase];
+    
+	if (_document == nil) // We need to create a brand new ReaderDocument object the first time we run
+	{
+		NSString *filePath = [[NSBundle mainBundle] pathForResource:documentName ofType:nil]; // Path
+        
+		_document = [[ReaderDocument alloc] initWithFilePath:filePath password:phrase];
+	}
+    
+	if (_document != nil) // Must have a valid ReaderDocument object in order to proceed
+	{
+		ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:_document andPDFName:[[pdfs objectAtIndex:0] lastPathComponent]];
+        readerViewController.readerView = self;
+        [self presentModalViewController:readerViewController animated:YES];
+        
+		//readerViewController.delegate = self; // Set the ReaderViewController delegate to self
 	}
 }
 

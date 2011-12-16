@@ -27,6 +27,16 @@
 		9900CC0C149A200B003B8D76 /* ReaderContentTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CC0B149A200B003B8D76 /* ReaderContentTile.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9900CC0F149A2033003B8D76 /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CC0E149A2033003B8D76 /* CGPDFDocument.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9900CC1C149A21B8003B8D76 /* ReaderMainToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9900CC1B149A21B8003B8D76 /* ReaderMainToolbar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A283149B0C6C00FBC277 /* SearchBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A27E149B0C6C00FBC277 /* SearchBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A284149B0C6C00FBC277 /* SearchTablePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A280149B0C6C00FBC277 /* SearchTablePopup.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A285149B0C6C00FBC277 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A282149B0C6C00FBC277 /* SearchViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A28E149B0DFE00FBC277 /* DTGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A288149B0DFE00FBC277 /* DTGridView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A28F149B0DFE00FBC277 /* DTGridViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A28A149B0DFE00FBC277 /* DTGridViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A290149B0DFE00FBC277 /* DTGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A28D149B0DFE00FBC277 /* DTGridViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A297149B0E8F00FBC277 /* PageIndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A292149B0E8E00FBC277 /* PageIndexCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A298149B0E8F00FBC277 /* PDF_indexerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A294149B0E8E00FBC277 /* PDF_indexerViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A299149B0E8F00FBC277 /* PDFSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A296149B0E8E00FBC277 /* PDFSearcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9914A29C149B255C00FBC277 /* Reader.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A29B149B255C00FBC277 /* Reader.pdf */; };
 		99B182CD149A228C00BBDBE8 /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B182CC149A228C00BBDBE8 /* UIXToolbarView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		99B182D8149A280100BBDBE8 /* Reader-Button-H.png in Resources */ = {isa = PBXBuildFile; fileRef = 99B182D0149A280100BBDBE8 /* Reader-Button-H.png */; };
 		99B182D9149A280100BBDBE8 /* Reader-Button-H@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99B182D1149A280100BBDBE8 /* Reader-Button-H@2x.png */; };
@@ -78,6 +88,27 @@
 		9900CC0E149A2033003B8D76 /* CGPDFDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CGPDFDocument.m; path = Reader/CGPDFDocument.m; sourceTree = "<group>"; };
 		9900CC1A149A21B8003B8D76 /* ReaderMainToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderMainToolbar.h; path = Reader/ReaderMainToolbar.h; sourceTree = "<group>"; };
 		9900CC1B149A21B8003B8D76 /* ReaderMainToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReaderMainToolbar.m; path = Reader/ReaderMainToolbar.m; sourceTree = "<group>"; };
+		9914A27D149B0C6C00FBC277 /* SearchBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchBackground.h; sourceTree = "<group>"; };
+		9914A27E149B0C6C00FBC277 /* SearchBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchBackground.m; sourceTree = "<group>"; };
+		9914A27F149B0C6C00FBC277 /* SearchTablePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTablePopup.h; sourceTree = "<group>"; };
+		9914A280149B0C6C00FBC277 /* SearchTablePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTablePopup.m; sourceTree = "<group>"; };
+		9914A281149B0C6C00FBC277 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		9914A282149B0C6C00FBC277 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		9914A287149B0DFE00FBC277 /* DTGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTGridView.h; sourceTree = "<group>"; };
+		9914A288149B0DFE00FBC277 /* DTGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTGridView.m; sourceTree = "<group>"; };
+		9914A289149B0DFE00FBC277 /* DTGridViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTGridViewCell.h; sourceTree = "<group>"; };
+		9914A28A149B0DFE00FBC277 /* DTGridViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTGridViewCell.m; sourceTree = "<group>"; };
+		9914A28B149B0DFE00FBC277 /* DTGridViewCellInfoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTGridViewCellInfoProtocol.h; sourceTree = "<group>"; };
+		9914A28C149B0DFE00FBC277 /* DTGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTGridViewController.h; sourceTree = "<group>"; };
+		9914A28D149B0DFE00FBC277 /* DTGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTGridViewController.m; sourceTree = "<group>"; };
+		9914A291149B0E8E00FBC277 /* PageIndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndexCell.h; sourceTree = "<group>"; };
+		9914A292149B0E8E00FBC277 /* PageIndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndexCell.m; sourceTree = "<group>"; };
+		9914A293149B0E8E00FBC277 /* PDF_indexerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDF_indexerViewController.h; sourceTree = "<group>"; };
+		9914A294149B0E8E00FBC277 /* PDF_indexerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDF_indexerViewController.m; sourceTree = "<group>"; };
+		9914A295149B0E8E00FBC277 /* PDFSearcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFSearcher.h; sourceTree = "<group>"; };
+		9914A296149B0E8E00FBC277 /* PDFSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFSearcher.m; sourceTree = "<group>"; };
+		9914A29A149B11FF00FBC277 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		9914A29B149B255C00FBC277 /* Reader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Reader.pdf; sourceTree = "<group>"; };
 		99B182CB149A228C00BBDBE8 /* UIXToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIXToolbarView.h; path = Reader/UIXToolbarView.h; sourceTree = "<group>"; };
 		99B182CC149A228C00BBDBE8 /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIXToolbarView.m; path = Reader/UIXToolbarView.m; sourceTree = "<group>"; };
 		99B182D0149A280100BBDBE8 /* Reader-Button-H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Button-H.png"; sourceTree = "<group>"; };
@@ -111,6 +142,7 @@
 		9900CBAA1499EA26003B8D76 = {
 			isa = PBXGroup;
 			children = (
+				9914A29A149B11FF00FBC277 /* Constants.h */,
 				9A049DFE1499F7510031BA05 /* QuartzCore.framework */,
 				9900CBBF1499EA26003B8D76 /* MedicalPDFReader */,
 				9900CBB81499EA26003B8D76 /* Frameworks */,
@@ -178,6 +210,8 @@
 		9900CBDA1499EC6B003B8D76 /* PDF Search */ = {
 			isa = PBXGroup;
 			children = (
+				9914A286149B0DFE00FBC277 /* DTGridView */,
+				9914A27C149B0C6C00FBC277 /* Sapna Search */,
 				9900CBDB1499EC88003B8D76 /* PDFSearchClass.h */,
 				9900CBDC1499EC88003B8D76 /* PDFSearchClass.m */,
 			);
@@ -196,6 +230,7 @@
 		9900CBDF1499ECDD003B8D76 /* pdf */ = {
 			isa = PBXGroup;
 			children = (
+				9914A29B149B255C00FBC277 /* Reader.pdf */,
 				9900CBE01499ECDD003B8D76 /* data.pdf */,
 			);
 			name = pdf;
@@ -225,6 +260,41 @@
 				9900CC04149A1F40003B8D76 /* ReaderViewController.m */,
 			);
 			name = Reader;
+			sourceTree = "<group>";
+		};
+		9914A27C149B0C6C00FBC277 /* Sapna Search */ = {
+			isa = PBXGroup;
+			children = (
+				9914A291149B0E8E00FBC277 /* PageIndexCell.h */,
+				9914A292149B0E8E00FBC277 /* PageIndexCell.m */,
+				9914A293149B0E8E00FBC277 /* PDF_indexerViewController.h */,
+				9914A294149B0E8E00FBC277 /* PDF_indexerViewController.m */,
+				9914A295149B0E8E00FBC277 /* PDFSearcher.h */,
+				9914A296149B0E8E00FBC277 /* PDFSearcher.m */,
+				9914A27D149B0C6C00FBC277 /* SearchBackground.h */,
+				9914A27E149B0C6C00FBC277 /* SearchBackground.m */,
+				9914A27F149B0C6C00FBC277 /* SearchTablePopup.h */,
+				9914A280149B0C6C00FBC277 /* SearchTablePopup.m */,
+				9914A281149B0C6C00FBC277 /* SearchViewController.h */,
+				9914A282149B0C6C00FBC277 /* SearchViewController.m */,
+			);
+			name = "Sapna Search";
+			path = "PDF Search Class/Sapna Search";
+			sourceTree = "<group>";
+		};
+		9914A286149B0DFE00FBC277 /* DTGridView */ = {
+			isa = PBXGroup;
+			children = (
+				9914A287149B0DFE00FBC277 /* DTGridView.h */,
+				9914A288149B0DFE00FBC277 /* DTGridView.m */,
+				9914A289149B0DFE00FBC277 /* DTGridViewCell.h */,
+				9914A28A149B0DFE00FBC277 /* DTGridViewCell.m */,
+				9914A28B149B0DFE00FBC277 /* DTGridViewCellInfoProtocol.h */,
+				9914A28C149B0DFE00FBC277 /* DTGridViewController.h */,
+				9914A28D149B0DFE00FBC277 /* DTGridViewController.m */,
+			);
+			name = DTGridView;
+			path = "PDF Search Class/DTGridView";
 			sourceTree = "<group>";
 		};
 		99B182CF149A280100BBDBE8 /* images */ = {
@@ -308,6 +378,7 @@
 				99B182DF149A280100BBDBE8 /* Reader-Mark-Y@2x.png in Resources */,
 				99B182E2149A298100BBDBE8 /* search_phone.png in Resources */,
 				99B182E3149A298100BBDBE8 /* search_phone@2x.png in Resources */,
+				9914A29C149B255C00FBC277 /* Reader.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +404,15 @@
 				9900CC0F149A2033003B8D76 /* CGPDFDocument.m in Sources */,
 				9900CC1C149A21B8003B8D76 /* ReaderMainToolbar.m in Sources */,
 				99B182CD149A228C00BBDBE8 /* UIXToolbarView.m in Sources */,
+				9914A283149B0C6C00FBC277 /* SearchBackground.m in Sources */,
+				9914A284149B0C6C00FBC277 /* SearchTablePopup.m in Sources */,
+				9914A285149B0C6C00FBC277 /* SearchViewController.m in Sources */,
+				9914A28E149B0DFE00FBC277 /* DTGridView.m in Sources */,
+				9914A28F149B0DFE00FBC277 /* DTGridViewCell.m in Sources */,
+				9914A290149B0DFE00FBC277 /* DTGridViewController.m in Sources */,
+				9914A297149B0E8F00FBC277 /* PageIndexCell.m in Sources */,
+				9914A298149B0E8F00FBC277 /* PDF_indexerViewController.m in Sources */,
+				9914A299149B0E8F00FBC277 /* PDFSearcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

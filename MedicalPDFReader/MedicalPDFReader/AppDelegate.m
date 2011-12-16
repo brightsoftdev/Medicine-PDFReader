@@ -39,7 +39,7 @@
     
 	if (document != nil) // Must have a valid ReaderDocument object in order to proceed
 	{
-		ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+		ReaderViewController *readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document andPDFName:[[pdfs lastObject] lastPathComponent]];
         self.window.rootViewController = readerViewController;
 		//readerViewController.delegate = self; // Set the ReaderViewController delegate to self
 	}
