@@ -891,4 +891,10 @@
 	}
 }
 
+-(void)goToPageIndex:(NSInteger)index
+{
+    NSLog(@"Go to Page : %d",index);
+    [self showDocumentPage:index + 1];
+}
+
 @end

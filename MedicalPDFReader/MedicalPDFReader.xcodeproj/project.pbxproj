@@ -37,6 +37,8 @@
 		9914A298149B0E8F00FBC277 /* PDF_indexerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A294149B0E8E00FBC277 /* PDF_indexerViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9914A299149B0E8F00FBC277 /* PDFSearcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9914A296149B0E8E00FBC277 /* PDFSearcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9914A29C149B255C00FBC277 /* Reader.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A29B149B255C00FBC277 /* Reader.pdf */; };
+		9914A29F149B2A4F00FBC277 /* close-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 9914A29D149B2A4F00FBC277 /* close-Button.png */; };
+		9914A2A0149B2A4F00FBC277 /* close-buttonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9914A29E149B2A4F00FBC277 /* close-buttonPressed.png */; };
 		99B182CD149A228C00BBDBE8 /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B182CC149A228C00BBDBE8 /* UIXToolbarView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		99B182D8149A280100BBDBE8 /* Reader-Button-H.png in Resources */ = {isa = PBXBuildFile; fileRef = 99B182D0149A280100BBDBE8 /* Reader-Button-H.png */; };
 		99B182D9149A280100BBDBE8 /* Reader-Button-H@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 99B182D1149A280100BBDBE8 /* Reader-Button-H@2x.png */; };
@@ -109,6 +111,8 @@
 		9914A296149B0E8E00FBC277 /* PDFSearcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFSearcher.m; sourceTree = "<group>"; };
 		9914A29A149B11FF00FBC277 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		9914A29B149B255C00FBC277 /* Reader.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Reader.pdf; sourceTree = "<group>"; };
+		9914A29D149B2A4F00FBC277 /* close-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-Button.png"; sourceTree = "<group>"; };
+		9914A29E149B2A4F00FBC277 /* close-buttonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-buttonPressed.png"; sourceTree = "<group>"; };
 		99B182CB149A228C00BBDBE8 /* UIXToolbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIXToolbarView.h; path = Reader/UIXToolbarView.h; sourceTree = "<group>"; };
 		99B182CC149A228C00BBDBE8 /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIXToolbarView.m; path = Reader/UIXToolbarView.m; sourceTree = "<group>"; };
 		99B182D0149A280100BBDBE8 /* Reader-Button-H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Reader-Button-H.png"; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 		99B182CF149A280100BBDBE8 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9914A29D149B2A4F00FBC277 /* close-Button.png */,
+				9914A29E149B2A4F00FBC277 /* close-buttonPressed.png */,
 				99B182E0149A298000BBDBE8 /* search_phone.png */,
 				99B182E1149A298000BBDBE8 /* search_phone@2x.png */,
 				99B182D0149A280100BBDBE8 /* Reader-Button-H.png */,
@@ -379,6 +385,8 @@
 				99B182E2149A298100BBDBE8 /* search_phone.png in Resources */,
 				99B182E3149A298100BBDBE8 /* search_phone@2x.png in Resources */,
 				9914A29C149B255C00FBC277 /* Reader.pdf in Resources */,
+				9914A29F149B2A4F00FBC277 /* close-Button.png in Resources */,
+				9914A2A0149B2A4F00FBC277 /* close-buttonPressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,9 +35,9 @@
 
 	allFilesText = [[NSMutableArray alloc] init];
 	
-	for (int i=0; i<numberOfPages; i++)	//pdfs always start from 1 and not zero
+	for (int i=1; i<=numberOfPages; i++)	//pdfs always start from 1 and not zero
 	{
-		CGPDFPageRef myPageRef = CGPDFDocumentGetPage(myDocumentRef, i + 1);
+		CGPDFPageRef myPageRef = CGPDFDocumentGetPage(myDocumentRef, i);
 		
 		NSString *pageString = [pdfSearcher returnStringForPage:myPageRef];
 		//NSLog(@"this is the pagestring for page Number %d:%@", i, pageString);

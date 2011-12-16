@@ -84,7 +84,7 @@
 	
 	sectionLabel=[[UILabel alloc]initWithFrame:CGRectMake(0,0,300,20 ) ];
 	sectionLabel.text=@"";
-	sectionLabel.textColor= RGBCOLOR(255, 204, 41);
+	sectionLabel.textColor= [UIColor whiteColor];//RGBCOLOR(255, 204, 41);
 	sectionLabel.backgroundColor=[UIColor clearColor];
 	[sectionLabel setFont:[UIFont fontWithName:@"helvetica" size:16]];
 	UIBarButtonItem * labelbutton=[[UIBarButtonItem alloc] initWithCustomView:sectionLabel];
@@ -101,7 +101,7 @@
 	[searchBarView release];
 	
 	previewgridview = [[DTGridView alloc] initWithFrame:CGRectMake(0,objtoolbar.frame.size.height,1024,220)];
-	previewgridview.backgroundColor = RGBCOLOR(205, 130, 54);
+	previewgridview.backgroundColor = [UIColor clearColor];//RGBCOLOR(205, 130, 54);
 //	previewgridview.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backroundFoglia.png"]];
 //	previewgridview.backgroundColor = [UIImage imageNamed:@"backroundFoglia.png"];
 	previewgridview.delegate = self;
@@ -442,9 +442,9 @@
 	if (isSearched)
 	{
 		if (isSectionSearched)
-			pageNumber = [[arrayOfSectionIndices objectAtIndex:columnIndex] integerValue] -2;
+			pageNumber = [[arrayOfSectionIndices objectAtIndex:columnIndex] integerValue] -1;
 		else 
-			pageNumber = [[arrayOfIndices objectAtIndex:columnIndex] integerValue] -2;
+			pageNumber = [[arrayOfIndices objectAtIndex:columnIndex] integerValue] -1;
 		
 	}
 	else 
@@ -513,10 +513,10 @@
 	{
 		if (isSectionSearched)
 //			[rootViewController showPage:[[arrayOfSectionIndices objectAtIndex:columnIndex] integerValue]-2];
-			[rootViewController goToPageIndex:[[arrayOfSectionIndices objectAtIndex:columnIndex] integerValue]-2];
+			[rootViewController goToPageIndex:[[arrayOfSectionIndices objectAtIndex:columnIndex] integerValue]-1];
 		else 
 //			[rootViewController showPage:[[arrayOfIndices objectAtIndex:columnIndex] integerValue]-2];
-			[rootViewController goToPageIndex:[[arrayOfIndices objectAtIndex:columnIndex] integerValue]-2];
+			[rootViewController goToPageIndex:[[arrayOfIndices objectAtIndex:columnIndex] integerValue]-1];
 	}
 	else 
 		[rootViewController goToPageIndex:columnIndex];
@@ -851,7 +851,7 @@
 	else 
 		previewgridview.frame =CGRectMake(0,objtoolbar.frame.size.height,768,220);
 	
-	previewgridview.backgroundColor = RGBCOLOR(205, 130, 54);
+	previewgridview.backgroundColor = [UIColor clearColor];//RGBCOLOR(205, 130, 54);
 	previewgridview.delegate = self;
 	previewgridview.dataSource = self;
 	[self.view addSubview:previewgridview];
